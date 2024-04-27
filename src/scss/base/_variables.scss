@@ -1,0 +1,30 @@
+/* stylelint-disable alpha-value-notation */
+/* stylelint-disable color-function-notation */
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  --content-width: 1312px;
+  --container-offset: 16px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // font-family
+  --font-family-primary: "Spectral", serif;;
+
+  // font-weight
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+
+  // color
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-green-700: #304722;
+  --color-green-400: #50713C;
+
+  //  radius
+  --radius-btn: 6px;
+  --radius-main: 16px;
+  --radius-full: 50%;
+}
