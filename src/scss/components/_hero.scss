@@ -48,4 +48,10 @@
       margin-bottom: rem(48);
     }
   }
+
+  &--product {
+    h1 {
+      width: min-content;
+    }
+  }
 }
