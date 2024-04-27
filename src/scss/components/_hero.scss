@@ -22,16 +22,30 @@
     z-index: 1;
     max-width: 900px;
     width: 100%;
-    margin-inline: auto;
-    text-align: center;
-    color: var(--color-green-700);
   }
 
   h1 {
     margin-bottom: 24px;
   }
 
-  .subtitle {
-    margin-bottom: rem(48);
+  &--full {
+    .hero__content {
+      margin-inline: auto;
+      text-align: center;
+      color: var(--color-green-700);
+    }
+  }
+
+  &--half {
+    .hero__inner {
+      background-size: contain;
+      background-position: center right;
+    }
+  }
+
+  &--btn {
+    .subtitle {
+      margin-bottom: rem(48);
+    }
   }
 }
