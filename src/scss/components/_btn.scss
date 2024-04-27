@@ -1,0 +1,63 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins"as*;
+
+*[class].btn {
+  display: inline-block;
+  margin: 0;
+  padding: 6px 22px;
+  font-family: var(--font-family-primary);
+  font-size: clamp(18px, 2vw, 20px);
+  font-weight: var(--fw-400);
+  line-height: 1.2;
+  border: 2px solid var(--color-white);
+  color: var(--color-white) !important;
+  text-align: center;
+  border-radius: var(--radius-btn);
+  background-color: transparent;
+  transition-property: background-color, color;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+
+  &--reverse,
+  &:hover {
+    color: var(--color-green-400) !important;
+    background-color: var(--color-white);
+  }
+
+  &--reverse {
+    &:hover {
+      background-color: transparent;
+      color: var(--color-white) !important;
+    }
+  }
+}
+
+*[class].swiper {
+  .swiper-button {
+    width: 64px;
+    height: 64px;
+    background-color: var(--color-gray-700);
+    border-radius: var(--radius-round);
+    top: 50%;
+    transform: translateY(-50%);
+
+    &::after {
+      @include contain-background();
+
+      content: '';
+      position: absolute;
+      height: 20px;
+      width: 26px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-image: var(--icon-swiper);
+    }
+  }
+
+  .swiper-button-prev {
+    &::after {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+  }
+}
