@@ -30,6 +30,15 @@
       color: var(--color-white) !important;
     }
   }
+
+  &--dark {
+    background-color: var(--color-green-700);
+    border-color: var(--color-green-700);
+
+    &:hover {
+      color: var(--color-green-700) !important;
+    }
+  }
 }
 
 *[class].swiper {
