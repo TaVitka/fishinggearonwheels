@@ -37,7 +37,8 @@ h3,
 }
 
 p,
-span {
+span,
+li {
   font-size: clamp(18px, 2vw, 20px);
   line-height: 1.2;
   font-weight: var(--fw-400);
