@@ -6,8 +6,25 @@
     margin-bottom: rem(56);
   }
 
+  h3 {
+    margin-bottom: 16px;
+  }
+
+  &__accent {
+    line-height: 1.4;
+    font-style: italic;
+  }
+
   &__items--decorated {
     counter-reset: num;
+
+    .text__item {
+      &:not(:last-of-type) {
+        margin-bottom: rem(56);
+        padding-bottom: rem(47);
+        border-bottom: 2px solid var(--color-green-700);
+      }
+    }
 
     .text__content {
       position: relative;
@@ -86,15 +103,13 @@
     }
   }
 
-  .text__item {
-    &:not(:last-of-type) {
-      margin-bottom: rem(56);
-      padding-bottom: rem(47);
-      border-bottom: 2px solid var(--color-green-700);
-    }
-  }
+  &__items--grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(56);
 
-  h3 {
-    margin-bottom: 16px;
+    h3 {
+      margin-bottom: 24px;
+    }
   }
 }
