@@ -72,3 +72,22 @@ section {
     }
   }
 }
+
+.article {
+  img {
+    margin-bottom: 16px;
+  }
+
+  a {
+    display: block;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-green-400);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+  }
+}
