@@ -1,0 +1,92 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.faq {
+  h2 {
+    margin-bottom: rem(56);
+  }
+
+  &__item {
+    overflow: hidden;
+    border-bottom: 2px solid var(--color-green-700);
+
+    &:not(:last-child) {
+      margin-bottom: rem(56);
+    }
+  }
+
+  details {
+    overflow: hidden;
+
+    &[open] {
+      summary {
+        padding: 0 56px 12px 0;
+      }
+
+      summary::before {
+        rotate: 180deg;
+      }
+
+      summary + div {
+        padding: 0 0 24px 0;
+      }
+    }
+
+    p {
+      font-style: italic;
+    }
+  }
+
+  summary {
+    position: relative;
+    padding: 0 56px 24px 0;
+    font-size: clamp(20px, 3vw, 24px);
+    line-height: 1.5;
+    font-weight: var(--fw-600);
+    cursor: pointer;
+
+    &::before {
+      @include cover-background;
+
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      overflow: hidden;
+      width: 32px;
+      height: 32px;
+      rotate: 0deg;
+      background-image: url("../images/icons/more-icon.svg");
+    }
+  }
+
+  @include media(tablet) {
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+
+    summary {
+      padding: 16px rem(44) 16px 16px;
+      font-size: clamp(20px, 1rem + 1vi, 22px);
+
+      &::before {
+        top: 16px;
+        right: 16px;
+      }
+    }
+
+    details {
+      &[open] {
+        summary {
+          padding: 16px rem(44) 8px 16px;
+        }
+
+        summary + div {
+          padding: 0 16px 16px;
+        }
+      }
+    }
+  }
+}
