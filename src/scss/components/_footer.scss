@@ -1,0 +1,30 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.footer {
+  padding-block: rem(86) 16px;
+
+  &__nav {
+    @include flex-all-sb;
+    margin-bottom: rem(48);
+  }
+
+  &__items {
+    @include flex-v-center;
+  }
+
+  &__item {
+    &:not(:last-of-type) {
+      margin-right: rem(36);
+    }
+
+    a {
+      font-size: clamp(18px, 2vw, 20px);
+      line-height: 1.2;
+    }
+  }
+
+  &__bottom {
+    @include flex-all-sb;
+  }
+}
