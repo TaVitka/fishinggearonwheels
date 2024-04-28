@@ -53,7 +53,7 @@
 
       &--reverse::before {
         right: 144px;
-        left:unset;
+        left: unset;
       }
 
       &::after {
@@ -70,7 +70,7 @@
 
       &--reverse::after {
         right: 0;
-        left:unset;
+        left: unset;
       }
 
       &--selection::after {
@@ -110,6 +110,56 @@
 
     h3 {
       margin-bottom: 24px;
+    }
+  }
+
+  &--post {
+    position: relative;
+    padding: rem(86) 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 35%;
+      background-size: cover;
+      background-position: -10px 100px;
+      background-image: url("../images/blog/post-decor.png");
+      z-index: -1;
+    }
+
+    .text__info {
+      max-width: 700px;
+      width: 100%;
+      counter-reset: num;
+
+      & > *:not(.subtitle, :last-child) {
+        margin-bottom: 36px;
+      }
+
+      .subtitle {
+        margin-bottom: 16px;
+      }
+
+      ul,
+      ol {
+        padding-left: 24px;
+      }
+
+      li {
+        display: list-item;
+        padding-left: 8px;
+      }
+
+      ul li {
+        list-style: disc;
+      }
+
+      ol li {
+        list-style: auto;
+      }
     }
   }
 }

@@ -21,11 +21,14 @@
   --color-black: #000000;
 
   --color-green-700: #304722;
-  --color-green-400: #50713C;
+  --color-green-400: #50713c;
 
   //  radius
   --radius-btn: 6px;
   --radius-main: 16px;
   --radius-l: 86px;
   --radius-full: 50%;
+
+  // gradient
+  --gradient-main: linear-gradient(270deg, rgb(0 0 0 / 80%) 20%, rgb(0 0 0 / 60%) 44%, rgba(241, 241, 241, 0) 100%);
 }

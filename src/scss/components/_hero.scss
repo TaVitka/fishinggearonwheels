@@ -19,6 +19,7 @@
   }
 
   &__content {
+    position: relative;
     z-index: 1;
     max-width: 900px;
     width: 100%;
@@ -52,6 +53,17 @@
   &--product {
     h1 {
       width: min-content;
+    }
+  }
+
+  &--post {
+    .hero__content {
+      max-width: 499px;
+      width: 100%;
+    }
+
+    h1 {
+      margin-bottom: 0;
     }
   }
 }
