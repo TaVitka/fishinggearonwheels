@@ -27,6 +27,12 @@ body {
   &.open {
     overflow: hidden;
   }
+
+  &--no-hero {
+    .main {
+      padding-top: var(--header-height);
+    }
+  }
 }
 
 section {
