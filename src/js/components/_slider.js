@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     speed: 700,
     initialSlide: 1,
     autoplay: {
-      delay: 50000,
+      delay: 4000,
     },
     modules: [Navigation, Scrollbar, Pagination, Autoplay],
     draggable: true,
