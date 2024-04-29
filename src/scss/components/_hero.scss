@@ -79,6 +79,12 @@
         width: 40%;
       }
     }
+
+    &--product {
+      h1 {
+        width: 100%;
+      }
+    }
   }
 
   @include media(mobile-l) {
