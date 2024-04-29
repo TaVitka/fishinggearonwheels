@@ -200,6 +200,13 @@
     }
   }
 
+  &--slider {
+    .box__slider {
+      max-width: 1440px;
+      overflow: hidden;
+    }
+  }
+
   &--rental {
     .box__item {
       &:first-child {
@@ -327,6 +334,14 @@
   }
 
   @include media(mobile-l) {
+    &#blog {
+      padding-bottom: 0;
+    }
+
+    &__items {
+      grid-template-columns: 1fr;
+    }
+
     .box__items--three {
       grid-template-columns: repeat(2, 1fr);
       grid-auto-rows: auto;

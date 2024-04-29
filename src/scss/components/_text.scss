@@ -115,6 +115,8 @@
 
   &--post {
     position: relative;
+    max-width: 1440px;
+    margin-inline: auto;
     padding: rem(86) 0;
 
     &::before {
@@ -136,7 +138,7 @@
       counter-reset: num;
 
       & > *:not(.subtitle, :last-child) {
-        margin-bottom: 36px;
+        margin-bottom: clamp(24px, 3vw, 36px);
       }
 
       .subtitle {
@@ -145,7 +147,7 @@
 
       ul,
       ol {
-        padding-left: 24px;
+        padding-left: clamp(16px, 3vw, 24px);
       }
 
       li {
@@ -178,13 +180,27 @@
 
         &::after {
           width: 75px;
-          height: 50px;background-size: 50%;
+          height: 50px;
+          background-size: 50%;
           left: 70px;
         }
 
         &--reverse::after {
           left: unset;
         }
+      }
+    }
+
+    &--post {
+      padding: rem(40) 0 0;
+
+      &::before {
+        width: 100%;
+        background-position: center;
+        background-repeat: space;
+        background-size: auto;
+        left: 0;
+        right: 0;
       }
     }
   }

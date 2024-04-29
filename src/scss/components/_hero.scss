@@ -12,8 +12,10 @@
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-    padding: rem(60) 0;
+    max-width: 1440px;
     min-height: 900px;
+    margin-inline: auto;
+    padding: rem(60) 0;
     height: 100%;
     background-position: center bottom;
   }
@@ -92,17 +94,27 @@
       min-height: 350px;
     }
 
-    &--half {
+    &--half,
+    &--post {
       .hero__content {
+        max-width: 100%;
         width: 100%;
       }
+    }
 
+    &--half {
       .hero__inner {
         background-size: cover;
       }
 
       .hero__content {
         text-align: center;
+      }
+    }
+
+    &--post {
+      .hero__inner {
+        min-height: 500px;
       }
     }
   }
