@@ -8,7 +8,7 @@
   }
 
   &__title {
-    margin-bottom: rem(56);
+    margin-bottom: clamp(24px, 4vw, 56px);
   }
 
   &__desc {
@@ -20,7 +20,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 1fr;
     align-items: stretch;
-    gap: clamp(12px, 2vw, 24px);
+    gap: 24px clamp(12px, 2vw, 24px);
 
     &--three {
       grid-template-columns: repeat(3, 1fr);
@@ -116,9 +116,14 @@
 
     &-back {
       position: absolute;
-      inset: 0;
+      inset: 50% 0 0 0;
+      transform: translateY(-50%);
       z-index: -2;
-      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      height: fit-content;
+      padding: clamp(24px, 3vw, 36px);
       color: var(--color-green-700);
       background-color: var(--color-white);
       border-radius: var(--radius-main);
@@ -260,19 +265,36 @@
   }
 
   @include media(tablet) {
+    img {
+      height: auto;
+      aspect-ratio: 4/3;
+    }
+
     &__nav .btn {
       display: none;
+    }
+
+    &__avatar {
+      &-back {
+        justify-content: center;
+
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &--details,
+    &--rental {
+      .box__name {
+        min-height: auto;
+      }
     }
 
     &--linked {
       .box__items {
         margin-bottom: 24px;
       }
-    }
-
-    img {
-      height: auto;
-      aspect-ratio: 4/3;
     }
   }
 
@@ -281,6 +303,7 @@
       grid-template-columns: repeat(2, 1fr);
       grid-auto-rows: auto;
 
+      .box__avatar:last-child,
       .box__item:last-child {
         grid-column: span 2;
 
@@ -306,6 +329,15 @@
       }
     }
 
+    .box__items--auto {
+      flex-direction: column;
+      gap: 24px 0;
+
+      .box__item {
+        max-width: 100%;
+      }
+    }
+
     &--slider {
       .box__slider {
         max-width: 90%;
@@ -317,6 +349,7 @@
     .box__items--three {
       grid-template-columns: 1fr;
 
+      .box__avatar:last-child,
       .box__item:last-child {
         grid-column: auto;
 

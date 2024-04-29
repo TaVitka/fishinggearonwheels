@@ -73,9 +73,31 @@
     }
   }
 
-  @include media(mobile-m) {
+  @include media(tablet) {
+    &--half {
+      .hero__content {
+        width: 40%;
+      }
+    }
+  }
+
+  @include media(mobile-l) {
     .hero__inner {
       min-height: 350px;
+    }
+
+    &--half {
+      .hero__content {
+        width: 100%;
+      }
+
+      .hero__inner {
+        background-size: cover;
+      }
+
+      .hero__content {
+        text-align: center;
+      }
     }
   }
 }

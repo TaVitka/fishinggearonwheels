@@ -3,16 +3,19 @@
 
 .card {
   &__content {
-    @include  flex-all-sb;
+    @include flex-sb;
+    align-items: center;
   }
 
   &__title {
-    margin-bottom: rem(56);
+    margin-bottom: clamp(24px, 4vw, 56px);
   }
 
   &__img {
     margin-right: clamp(16px, 4vw, 48px);
     border-radius: var(--radius-main);
+    width: 100%;
+    height: auto;
   }
 
   &__texts {
@@ -30,6 +33,48 @@
 
     h3 {
       margin-bottom: 24px;
+    }
+  }
+
+  @include media(tablet-wide) {
+    &--large {
+      .card__content {
+        align-items: stretch;
+      }
+    }
+  }
+
+  @include media(tablet) {
+    &__content {
+      flex-direction: column-reverse;
+    }
+
+    &__img {
+      margin-right: 0;
+      height: auto;
+    }
+
+    &__texts {
+      margin-bottom: clamp(24px, 3.5vw, 36px);
+    }
+
+    &--large {
+      .card__content {
+        flex-direction: column-reverse;
+      }
+    }
+
+    &--comitment {
+      img {
+        aspect-ratio: 6 / 5;
+        object-position: top;
+      }
+    }
+  }
+
+  @include media(mobile-m) {
+    &--comitment {
+      padding-top: 0;
     }
   }
 }

@@ -68,7 +68,7 @@ section {
 
   }
 
-  @include media(tablet) {
+  @include media(mobile-l) {
     &::before {
       background: var(--gradient-main);
     }
