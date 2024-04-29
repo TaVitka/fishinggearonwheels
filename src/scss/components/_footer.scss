@@ -6,7 +6,7 @@
 
   &__nav {
     @include flex-all-sb;
-    margin-bottom: rem(48);
+    margin-bottom: clamp(36px, 3.5vw, 48px);
   }
 
   &__items {
@@ -15,7 +15,7 @@
 
   &__item {
     &:not(:last-of-type) {
-      margin-right: rem(36);
+      margin-right: clamp(12px, 2.5vw, 36px);
     }
 
     a {
@@ -26,5 +26,24 @@
 
   &__bottom {
     @include flex-all-sb;
+  }
+
+  @include media(tablet) {
+    padding: rem(40) 0;
+  }
+
+  @include media(mobile-l) {
+    &__nav,
+    &__bottom {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px 0;
+    }
+
+    &__items {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px 0;
+    }
   }
 }

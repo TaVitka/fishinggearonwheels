@@ -42,6 +42,7 @@
   }
 
   &--mobile {
+    margin-inline: auto;
     display: none;
 
     @include media(tablet) {
@@ -61,6 +62,7 @@
 
   .swiper-button {
     position: relative;
+    margin-inline: 0;
     inset: 11px 0 0 0;
     width: 64px;
     height: 64px;
@@ -84,6 +86,18 @@
   .swiper-button-next {
     &::after {
       transform: translate(-50%, -50%) rotate(180deg);
+    }
+  }
+
+  @include media(mobile-l) {
+    .slider__buttons {
+      min-height: 32px;
+    }
+
+    .swiper-button,
+    .swiper-button::after {
+      width: 32px;
+      height: 32px;
     }
   }
 }

@@ -46,7 +46,7 @@
 
   &--btn {
     .subtitle {
-      margin-bottom: rem(48);
+      margin-bottom: clamp(24px, 4vw, 48px);
     }
   }
 
@@ -64,6 +64,18 @@
 
     h1 {
       margin-bottom: 0;
+    }
+  }
+
+  @include media(tablet-wide) {
+    .hero__inner {
+      min-height: 500px;
+    }
+  }
+
+  @include media(mobile-m) {
+    .hero__inner {
+      min-height: 350px;
     }
   }
 }

@@ -57,10 +57,6 @@ section {
   min-height: var(--vh);
 }
 
-.main {
-  //padding-top: var(--header-height);
-}
-
 .overlay {
   position: relative;
 
@@ -99,9 +95,15 @@ section {
   padding-left: 10px;
 
   &::before {
-    content: counter(num)".";
+    content: counter(num) ".";
     counter-increment: num;
     position: relative;
     left: 0;
+  }
+}
+
+@include media(tablet) {
+  .main {
+    padding-top: var(--header-height);
   }
 }

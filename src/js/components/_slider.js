@@ -2,11 +2,8 @@ import Swiper, { Navigation, Pagination, Scrollbar, Autoplay } from 'swiper';
 document.addEventListener('DOMContentLoaded', function() {
 
   let options = {
-    slidesPerView: 'auto',
     spaceBetween: 24,
-    centeredSlides: true,
     speed: 700,
-    initialSlide: 1,
     autoplay: {
       delay: 4000,
     },
@@ -17,6 +14,17 @@ document.addEventListener('DOMContentLoaded', function() {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    breakpoints: {
+      769: {
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        initialSlide: 1,
+      },
+      768: {
+        slidesPerView: 1,
+        centeredSlides: false,
+      }
+    }
   }
 
   const swiperSpecials = new Swiper('.slider__posts', options);

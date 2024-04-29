@@ -9,6 +9,11 @@
 
   img {
     height: auto;
+    object-fit: contain;
+
+    @include media(mobile-l) {
+      height: 40px;
+    }
   }
 
   .logo {
@@ -21,6 +26,10 @@
     justify-content: space-between;
     max-width: 983px;
     width: 100%;
+
+    @include media(tablet-wide) {
+      justify-content: flex-end;
+    }
 
     @include media(tablet) {
       position: fixed;
