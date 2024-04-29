@@ -204,6 +204,29 @@
     .box__item {
       position: relative;
       padding: 24px;
+      transition: background-color .4s ease-in-out, color .6s ease-in;
+
+      &:hover {
+        color: var(--color-white);
+        background-color: var(--color-green-700);
+      }
+
+      img {
+        filter: brightness(1);
+        transition: filter .4s ease-in-out;
+      }
+
+      a {
+        transition: border-color .6 ease-in;
+      }
+
+      &:hover img {
+        filter: brightness(.8);
+      }
+
+      &:hover a {
+        border-color: solid 2px var(--color-white);
+      }
     }
   }
 
